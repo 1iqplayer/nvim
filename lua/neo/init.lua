@@ -1,0 +1,8 @@
+require('neo.lazy')
+require('neo.build')
+require('neo.opts')
+require('neo.kb')
+require('neo.treesitter')
+require('neo.lsp')
+require('neo.telescope')
+require('neo.dap')
