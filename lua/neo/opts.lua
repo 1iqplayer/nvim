@@ -4,7 +4,7 @@ vim.cmd('set shiftwidth=4')
 vim.cmd('set noswapfile')
 vim.cmd('colorscheme tokyonight')
 
-vim.api.nvim_set_hl(1, "Normal", {guibg=NONE, ctermbg=NONE})
+vim.api.nvim_set_hl(0, "Normal", {guibg=NONE, ctermbg=NONE})
 
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true

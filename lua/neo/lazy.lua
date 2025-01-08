@@ -34,6 +34,7 @@ require('lazy').setup(
 	    priority = 1000,
 	    opts = {},
 	},
-	{'theHamsta/nvim-dap-virtual-text'}
+	{'theHamsta/nvim-dap-virtual-text'},
+	{'nvim-neotest/nvim-nio'},
     }
     )
