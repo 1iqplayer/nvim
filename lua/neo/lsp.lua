@@ -1,18 +1,53 @@
--- lsp_zero
+
+-- Load required modules
 local lspconfig = require('lspconfig')
 local lsp_zero = require('lsp-zero')
+local coq = require('coq') -- Ensure coq is installed and required properly
+
+-- Extend lsp-zero functionality
 lsp_zero.extend_lspconfig()
+
+-- On-attach setup
 lsp_zero.on_attach(function(client, bufnr)
+    -- Default lsp-zero keymaps
     lsp_zero.default_keymaps({ buffer = bufnr })
-    map('n', '<leader>=', ':LspZeroFormat<CR>')
+
+    -- Keymap for formatting
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>=', ':LspZeroFormat<CR>', { noremap = true, silent = true })
 end)
 
--- here you can setup the language servers
-local coq = require "coq"
+-- Mason setup for managing servers
 require('mason').setup()
 
-lspconfig.lua_ls.setup()
-lspconfig.lua_ls.setup(coq.lsp_ensure_capabilities())
-lspconfig.pylsp.setup(coq.lsp_ensure_capabilities())
--- coq config
+-- Language server configurations with COQ
+-- Lua language server
+lspconfig.lua_ls.setup(coq.lsp_ensure_capabilities({
+    settings = {
+        Lua = {
+            runtime = {
+                version = 'LuaJIT',
+            },
+            diagnostics = {
+                globals = { 'vim' },
+            },
+            workspace = {
+                library = vim.api.nvim_get_runtime_file('', true),
+                checkThirdParty = false,
+            },
+            telemetry = { enable = false },
+        },
+    },
+}))
+
+-- Python language server
+lspconfig.pylsp.setup(coq.lsp_ensure_capabilities({
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = { enabled = true },
+                flake8 = { enabled = false },
+            },
+        },
+    },
+}))
 
