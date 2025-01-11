@@ -23,8 +23,6 @@ require('lazy').setup(
 
 	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 	{'neovim/nvim-lspconfig'},
-	{'hrsh7th/cmp-nvim-lsp'},
-	{'hrsh7th/nvim-cmp'},
 	{'L3MON4D3/LuaSnip'},
 	{'mfussenegger/nvim-dap'},
 	{'rcarriga/nvim-dap-ui'},
@@ -36,5 +34,6 @@ require('lazy').setup(
 	},
 	{'theHamsta/nvim-dap-virtual-text'},
 	{'nvim-neotest/nvim-nio'},
+	{'ms-jpq/coq_nvim'},
     }
     )
