@@ -8,12 +8,14 @@ function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-
+-- Source current lua file
+map('n', '<leader>X', ':luafile %')
+-- Lazy interface
 map('n', '<leader>l', ':Lazy<CR>')
--- Fast saving with <leader> and s
+-- Fast saving wit <leader> and s
 map('n', '<leader>s', ':w<CR>')
--- Leave inser mode
-map('i', 'kk', '<C-C>')
+-- Leave insert mode
+map('i', 'jj', '<C-C>')
 -- Open files
 map('n', '<leader>fe', ':Ex<CR>')
 map('n', '<leader>ff', ':Telescope find_files<CR>')
