@@ -2,7 +2,7 @@ vim.cmd('set number')
 vim.cmd('set relativenumber')
 vim.cmd('set shiftwidth=4')
 vim.cmd('set noswapfile')
-vim.cmd('colorscheme tokyonight')
+vim.cmd('colorscheme cyberdream')
 
 vim.api.nvim_set_hl(0, "Normal", {guibg=NONE, ctermbg=NONE})
 

@@ -26,12 +26,9 @@ require('lazy').setup(
 	{'L3MON4D3/LuaSnip'},
 	{'mfussenegger/nvim-dap'},
 	{'rcarriga/nvim-dap-ui'},
-	{
-	    "folke/tokyonight.nvim",
-	    lazy = false,
-	    priority = 1000,
-	    opts = {},
-	},
+	-- Themes
+	{'navarasu/onedark.nvim'},{'scottmckendry/cyberdream.nvim'},
+	--
 	{'theHamsta/nvim-dap-virtual-text'},
 	{'nvim-neotest/nvim-nio'},
 	{'ms-jpq/coq_nvim'},
